@@ -1,346 +1,294 @@
-# ForensAI - Advanced Digital Forensics Platform
+<h1 align="center">ForensAI</h1>
+<h1 align="center">Version-1.1.0</h1>
+<p align="center">
+  <strong>ForensAI</strong> is an AI-powered digital forensics platform for analyzing disk images. It provides risk scoring, file carving, artifact analysis, and court-admissible evidence handling with Groq cloud AI integration.
+</p>
+
+<p align="center">
+  <img src="Icons/logo.ico" alt="ForensAI Logo" width="400"/>
+</p>
+
+## Navigation 🧭
+
+- [Preview 👀](#preview-)
+- [Features 🌟](#features-)
+- [Screenshots 📸](#screenshots-)
+- [Supported Image Formats 💾](#supported-image-formats-)
+- [Tested File Systems 🗂️](#tested-file-systems-%EF%B8%8F)
+- [Cross-Platform Compatibility 🖥️💻](#cross-platform-compatibility-%EF%B8%8F)
+- [Getting Started 🚀](#getting-started-)
+  - [Prerequisites 🛠️](#prerequisites-)
+  - [Configuration ⚙️](#configuration-%EF%B8%8F)
+  - [Running the Tool ▶️](#running-the-tool-%EF%B8%8F)
+- [Built With 🧱](#built-with-)
+- [Work in Progress 🛠️](#work-in-progress-)
+- [Testing & Feedback 🧪](#testing--feedback-)
+- [Contributing 🤝](#contributing-)
+
+
+## Preview 👀 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+<p>
+  <br/>
+  <img src="Icons/readme/Preview_Light.png" alt="ForensAI Preview Light" width="100%"/>
+  <br/>
+  <img src="Icons/readme/Preview_Dark.png" alt="ForensAI Preview Dark" width="100%"/>
+  <br/>
+</p>
+
+<br>
+
+## Features 🌟 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+### Acquisition & Image Handling
+✅ **Physical Disk Acquisition**: Acquire physical disks and logical partitions to raw .dd format with on-the-fly hash computation (MD5, SHA1, SHA256) \
+✅ **Image Mounting**: Mount forensic disk images (Windows via Arsenal Image Mounter, macOS via hdiutil, Linux via ewfmount) \
+✅ **E01 Image Verification**: Verify the integrity of E01 disk images \
+✅ **Convert E01 to Raw**: Convert E01 disk images to raw .dd format
+
+### Analysis & Viewers
+✅ **Tree Viewer**: Navigate through disk image structure including partitions, directories, and files \
+✅ **Hex Viewer**: View file content in hexadecimal format \
+✅ **Text Viewer**: View file content as text with string extraction and pagination \
+✅ **Application Viewer**: View images (JPG, PNG, GIF, BMP, TIFF, WEBP, AVIF), PDFs, audio/video, and Office documents \
+✅ **File Metadata**: View detailed file metadata including timestamps (created, accessed, modified, changed) \
+✅ **EXIF Data Extraction**: Extract and display EXIF metadata from photos \
+✅ **Registry Viewer**: View and examine Windows registry hive files \
+✅ **Message Decoding**: Decode messages from Base64, Hex, URL, HTML, Octal, and Binary encodings (Text tab right-click menu)
+
+### AI & Risk Analysis
+✅ **Groq AI Integration**: Cloud AI-powered forensic analysis using Llama 3.3 70B model \
+✅ **Risk Scoring**: 28 forensic rules producing 0-100 risk scores with severity tiers (Critical, High, Medium, Low, Info) \
+✅ **Priority View**: Risk-scored artifact browser with AI-powered risk explanations \
+✅ **Confidence Tracking**: Certainty metrics for AI-derived facts (Complete, Good, Partial, Damaged, Fragment)
+
+### File Recovery & Search
+✅ **File Carving**: Recover deleted files from disk images with confidence scoring (PDF, JPG, PNG, GIF, WAV, MOV, MP4, WMV, ZIP, BMP, DOCX, XLSX, PPTX) \
+✅ **File Search**: Search files across the disk image by name or extension type \
+✅ **Deleted Files View**: Browse and recover carved files with thumbnails
+
+### Forensic Accountability
+✅ **Case Audit Dashboard**: Case statistics, media analysis, and audit trail browser \
+✅ **Audit Logging**: Immutable JSONL audit trail with SHA-256 hash chain for court defensibility \
+✅ **Chain-of-Custody**: All risk assessments and AI interactions logged for forensic integrity
+
+### Visualization & Reporting
+✅ **Mind Map**: Interactive filesystem visualization with filter by file type, tree/radial layouts, and statistics \
+✅ **Forensic Report Generator**: Generate forensic reports from analysis results \
+✅ **VirusTotal API Integration**: Check files for malware using the VirusTotal API \
+✅ **Veriphone API Integration**: Verify phone numbers found during analysis \
+✅ **Dark Mode & Light Mode**: Full theme support
+
+<br>
+
+## Demo of Application Working process 📸 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+<a href="Screencasts/Screencast From 2026-02-11 15-34-41.webm"><img src="href="Screencasts/Screencast From 2026-02-11 15-34-41.webm" alt="Demo screen recording" width="900"/>
+
+## Supported Image Formats 💾 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+| Image Format                                   | Extensions             | Split   |  Unsplit |
+|------------------------------------------------|------------------------|---------|----------|
+| EnCase® Image File (EVF / Expert Witness Format)| `*.E01` `*.Ex01`       | ✔️      | ✔️       |
+| SMART/Expert Witness Image File                | `*.s01`                | ✔️      | ✔️       |
+| Single Image Unix / Linux DD / Raw             | `*.dd`, `*.img`, `*.raw` | ✔️    | ✔️       |
+| AccessData Image File                          | `*.ad1`                | ✔️      | ✔️       |
+| ISO Image                                      | `*.iso`                |         | ✔️       |
+| macOS Disk Image                               | `*.dmg`                |         | ✔️       |
+
+<br>
+
+## Tested File Systems 🗂️ &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
 
-**Version:** 1.1.0  
-**Author:** Manu and Nawaf
-**License:** MIT  
+| File System | Tested |
+|-------------|--------|
+| NTFS        | ✔️     |
+| FAT32       | ✔️     |
+| exFAT       | ✔️     |
+| HFS+        |        |
+| APFS        |        |
+| EXT2,3,4    |        |
 
-## Overview
+<br>
 
-ForensAI is a modern, cost-effective digital forensics platform designed to overcome the limitations of traditional commercial tools like FTK (Forensic Toolkit). Built with Python and Flask, ForensAI provides investigators with an intuitive web-based interface for conducting comprehensive digital forensic analysis, including advanced file carving, real-time processing updates, and robust error handling.
+## Getting Started 🚀 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
 
-The platform addresses key challenges in digital forensics by offering a resource-efficient solution that supports modern file systems, provides scripting capabilities for automation, and maintains stability and reliability throughout the investigation process. ForensAI is designed for continuous innovation to keep pace with evolving forensic needs while remaining accessible to organizations with varying budget constraints.
+### Prerequisites 🔧
 
-## Key Features
 
-### Core Functionality
-- **Advanced File Carving**: Comprehensive signature-based file recovery supporting 45+ file types across 12 categories
-- **Real-time Processing**: Live progress updates via WebSocket connections for long-running operations
-- **Modern Web Interface**: Responsive, intuitive dashboard accessible from any modern web browser
-- **Multi-format Support**: Handles various evidence formats including disk images, memory dumps, and individual files
+#### For Windows:
+*There's a compatibility issue with Python 3.12. Please install Python 3.11 from the official Python website: https://www.python.org/downloads/release/python-3110/
+<br>
 
-### Technical Capabilities
-- **Robust Error Handling**: Comprehensive error management with automatic retry mechanisms and detailed logging
-- **Database Integration**: SQLite-based evidence management with support for case organization and metadata storage
-- **Multiprocessing Support**: Windows-safe background processing for resource-intensive operations
-- **Extensible Architecture**: Modular design allowing for easy addition of new analysis modules
+If you don't already have Microsoft C++ Build Tools installed, you'll need to install them to compile required packages like libewf-python and pytsk3.
 
-### Security and Reliability
-- **User Authentication**: Secure login system with password hashing and session management
-- **Input Validation**: Comprehensive validation of user inputs and uploaded files
-- **Error Recovery**: Automatic retry mechanisms for transient failures
-- **Audit Logging**: Detailed logging of all operations for forensic accountability
+```
+If you encounter this error while installing dependencies:
 
-## Quick Start
-
-### Prerequisites
-
-- Python 3.11 or higher
-- Flask and related dependencies
-- SQLite (included with Python)
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-
-### Installation
-
-1. **Clone the Repository**
-   ```bash
-   git clone <repository-url>
-   cd forensai
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   pip install flask flask-sqlalchemy flask-login flask-socketio flask-cors werkzeug
-   ```
-
-3. **Initialize Database**
-   ```bash
-   python init_db.py
-   ```
-
-4. **Run the Application**
-   ```bash
-   cd src
-   python main.py
-   ```
-
-5. **Access the Interface**
-   Open your web browser and navigate to `http://localhost:5000`
-
-### Default Credentials
-
-- **Username:** admin
-- **Password:** admin123
-
-*Note: Change these credentials immediately after first login in a production environment.*
-
-## System Architecture
-
-ForensAI follows a modular architecture designed for scalability and maintainability:
-
-### Core Components
-
-1. **Web Application Layer** (`src/main.py`)
-   - Flask-based web server with SocketIO support
-   - User authentication and session management
-   - Route handling and request processing
-
-2. **Data Models** (`src/models/`)
-   - `case.py`: Case and evidence management
-   - `user.py`: User authentication and authorization
-
-3. **Processing Engine** (`src/forensics/`)
-   - `processor.py`: Main processing coordinator
-   - `carver.py`: File carving implementation
-
-4. **Web Interface** (`src/routes/`)
-   - `dashboard.py`: Main dashboard and statistics
-   - `case.py`: Case management operations
-   - `processing.py`: Evidence processing and carving
-
-5. **Utilities** (`src/utils/`)
-   - `error_handler.py`: Comprehensive error management
-
-### Database Schema
-
-The system uses SQLite with the following main entities:
-
-- **Users**: Authentication and user management
-- **Cases**: Investigation case organization
-- **Evidence**: Evidence file tracking and metadata
-- **EvidenceItems**: Individual evidence items within cases
-- **AnalysisResults**: Results from various analysis operations
-
-## File Carving Capabilities
-
-ForensAI's file carving engine supports comprehensive file type detection and recovery:
-
-### Supported File Categories
-
-1. **Image Formats**: JPEG, PNG, GIF, BMP, TIFF, ICO, WebP
-2. **Audio Formats**: MP3, WAV, OGG, FLAC, M4A
-3. **Video Formats**: MP4, FLV, MKV, AVI
-4. **Document Formats**: PDF, DOC, DOCX, RTF, XML, HTML
-5. **Archive Formats**: ZIP, RAR, GZIP, BZIP2, 7-Zip, XZ
-6. **Executable Formats**: ELF, Windows PE, Java Class, Mach-O
-7. **Database Formats**: SQLite, Microsoft Access
-8. **Font Formats**: TrueType, OpenType, WOFF
-9. **CAD Formats**: AutoCAD DWG
-10. **Email Formats**: EML, PST
-11. **Registry Formats**: Windows Registry Hives
-12. **Forensic Formats**: EnCase E01, Advanced Forensic Format
-
-### Carving Features
-
-- **Signature-based Detection**: Uses magic numbers for accurate file type identification
-- **End Marker Validation**: Proper file boundary detection where applicable
-- **Size Validation**: Configurable minimum and maximum file size limits
-- **Category Filtering**: Ability to carve specific file types or categories
-- **Progress Reporting**: Real-time progress updates during carving operations
-- **Comprehensive Reporting**: Detailed reports with statistics and file listings
-
-## Error Handling and Reliability
-
-ForensAI implements a comprehensive error handling system designed to ensure reliability and provide meaningful feedback:
-
-### Error Categories
-
-1. **Database Errors**: Connection issues, constraint violations, transaction failures
-2. **File Operation Errors**: Permission issues, disk space, corrupted files
-3. **Processing Errors**: Memory limitations, timeout conditions, multiprocessing failures
-4. **Validation Errors**: Invalid input data, malformed requests
-5. **Authentication Errors**: Login failures, session timeouts
-
-### Recovery Mechanisms
-
-- **Automatic Retry**: Exponential backoff for transient failures
-- **Graceful Degradation**: Fallback options when primary methods fail
-- **Safe Cleanup**: Proper resource cleanup even during error conditions
-- **Detailed Logging**: Comprehensive error logging for troubleshooting
-
-## API Reference
-
-ForensAI provides RESTful APIs for programmatic access:
-
-### Authentication Endpoints
-
-- `POST /login`: User authentication
-- `GET /logout`: User logout
-
-### Case Management
-
-- `GET /api/cases`: List all cases
-- `POST /api/cases`: Create new case
-- `GET /api/cases/{id}`: Get case details
-- `PUT /api/cases/{id}`: Update case
-- `DELETE /api/cases/{id}`: Delete case
-
-### Evidence Processing
-
-- `POST /api/cases/{case_id}/evidence/{evidence_id}/analyze`: Start analysis
-- `GET /api/cases/{case_id}/evidence/{evidence_id}/status`: Get processing status
-- `GET /api/cases/{case_id}/evidence/{evidence_id}/results`: Get analysis results
-
-### File Carving
-
-- `POST /api/cases/{case_id}/carve`: Upload and carve evidence file
-- `GET /api/cases/{case_id}/evidence/{evidence_id}/carving_results`: View carved files
-
-### System Status
-
-- `GET /api/health`: System health check
-- `GET /api/dashboard/stats`: Dashboard statistics
-- `GET /api/info`: System information
-
-## Development Guide
-
-### Adding New File Signatures
-
-To add support for new file types in the carving engine:
-
-1. **Update FILE_SIGNATURES** in `src/forensics/carver.py`:
-   ```python
-   b"\x50\x4B\x03\x04": {
-       "ext": "zip", 
-       "name": "ZIP archive", 
-       "end": b"\x50\x4B\x05\x06", 
-       "category": "archive"
-   }
-   ```
-
-2. **Add Validation Logic** in `_validate_file_data()` method if needed
-
-3. **Update Tests** to include the new file type
-
-### Extending Analysis Capabilities
-
-To add new analysis modules:
-
-1. **Create Analysis Module** in `src/forensics/`
-2. **Update Processor** to integrate the new module
-3. **Add Database Models** for storing results
-4. **Create API Endpoints** for accessing results
-5. **Update Web Interface** to display results
-
-## Testing and Validation
-
-ForensAI includes a comprehensive test suite to validate system functionality:
-
-### Running Tests
-
-```bash
-python test_system.py
+"Microsoft Visual C++ 14.0 or greater is required"
+It means your C++ Build Tools are missing or outdated.
+Please follow the steps below to install the latest version of "C++ Build Tools".
 ```
 
-### Test Coverage
+Step 1: Download and Install Microsoft C++ Build Tools - https://visualstudio.microsoft.com/visual-cpp-build-tools/
+During the installation, make sure to select the following workloads:
+  - Desktop development with C++
+  - C++ build tools
 
-The test suite validates:
+Step 2: Install the Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-- Database operations and user authentication
-- File carving with various file types
-- Error handling and recovery mechanisms
-- Application startup and component initialization
 
-### Continuous Integration
+#### For macOS - Apple Silicon:
 
-For production deployments, integrate the test suite into your CI/CD pipeline to ensure system reliability.
+Create a virtual environment with python 3.11
 
-## Security Considerations
+```bash
+python3.11 -m venv venv
+source venv/bin/activate
+```
 
-### Authentication and Authorization
+```bash
+chmod +x install_macos_silicon.sh
+```
 
-- Secure password hashing using Werkzeug
-- Session-based authentication with Flask-Login
-- Input validation and sanitization
-- CSRF protection for web forms
+```bash
+./install_macos_silicon.sh
+```
+**This script will:**
+- Check if Homebrew is installed and offer to install it if it's not.
+- Install necessary system dependencies (ffmpeg and poppler) using Homebrew.
+- Install all Python dependencies specified in requirements_macos_silicon.txt using pip.
 
-### Data Protection
 
-- Secure file handling with proper permissions
-- Temporary file cleanup after processing
-- Database encryption for sensitive data (recommended for production)
-- Audit logging for accountability
+#### For Ubuntu on WSL:
+```bash
+chmod +x WSL_Ubuntu_install.sh
+```
 
-### Network Security
+```bash
+./WSL_Ubuntu_install.sh
+```
 
-- HTTPS support (configure reverse proxy)
-- CORS configuration for API access
-- Rate limiting for API endpoints (recommended)
-- Firewall configuration for production deployment
+**This script will:**
 
-## Performance Optimization
+- Update package lists and install necessary system packages including graphics libraries and sound management tools.
+- Install necessary Python dependencies from requirements_macos_silicon.txt (same requirements for Ubuntu).
 
-### System Requirements
 
-- **Minimum**: 4GB RAM, 2 CPU cores, 10GB storage
-- **Recommended**: 16GB RAM, 8 CPU cores, 100GB+ storage
-- **Large Cases**: 32GB+ RAM, 16+ CPU cores, 1TB+ storage
+### Configuration ⚙️
 
-### Optimization Tips
+**API Keys Configuration**: The tool integrates with several APIs. To configure API keys, go to **Options > API Keys** in the menu:
 
-1. **Memory Management**: Configure appropriate file size limits for carving
-2. **Disk I/O**: Use SSD storage for better performance
-3. **Multiprocessing**: Adjust worker processes based on CPU cores
-4. **Database**: Regular maintenance and indexing for large datasets
+| API | Purpose | Where to get a key |
+|-----|---------|-------------------|
+| **Groq** | AI-powered forensic analysis | [console.groq.com](https://console.groq.com) (free) |
+| **VirusTotal** | Malware scanning | [virustotal.com](https://www.virustotal.com) |
+| **Veriphone** | Phone number verification | [veriphone.io](https://veriphone.io) |
 
-## Troubleshooting
 
-### Common Issues
 
-1. **Database Connection Errors**
-   - Verify database file permissions
-   - Check SQLite installation
-   - Review database URI configuration
+### Running the Tool ▶️
 
-2. **File Carving Failures**
-   - Verify input file accessibility
-   - Check available disk space
-   - Review file size limits
 
-3. **Authentication Problems**
-   - Reset admin password using init_db.py
-   - Check session configuration
-   - Verify user database entries
+```bash
+python main.py
+```
 
-### Log Analysis
+### Using Physical Disk Acquisition 💾
 
-ForensAI generates detailed logs in `forensai_errors.log`. Review this file for:
-- Error patterns and frequencies
-- Performance bottlenecks
-- Security incidents
-- System health indicators
+ForensAI includes physical disk acquisition that allows you to create forensic images of physical disks.
 
-## Contributing
+**Requirements:**
+- Administrator/root privileges
+- Sufficient storage space for the disk image
 
-We welcome contributions to ForensAI! Please follow these guidelines:
+**Using the GUI:**
 
-1. **Code Style**: Follow PEP 8 Python style guidelines
-2. **Testing**: Add tests for new functionality
-3. **Documentation**: Update documentation for changes
-4. **Error Handling**: Implement proper error handling
-5. **Security**: Consider security implications of changes
+1. Launch ForensAI as Administrator
+2. Go to **Tools > Acquire Physical Disk**
+3. Select the physical drive from the dropdown
+4. Choose output directory and format (Raw .dd or E01)
+5. Select hash algorithms (MD5, SHA1, SHA256)
+6. Enter operator name and optional notes
+7. Type the exact confirmation string (e.g., `CONFIRM PHYSICALDRIVE0`)
+8. Click **Start Acquisition**
 
-## License
+**Using the CLI:**
 
-ForensAI is released under the MIT License. See LICENSE file for details.
+List available disks:
+```bash
+python tools/acquire_cli.py list
+```
 
-## Support and Contact
+Acquire a disk:
+```bash
+# Windows
+python tools/acquire_cli.py acquire --drive 0 --output C:\Evidence\disk0.dd --md5 --sha1 --operator "John Doe"
 
-For technical support, bug reports, or feature requests:
+# Linux
+sudo python tools/acquire_cli.py acquire --device /dev/sdb --output /evidence/disk.dd --md5 --sha1 --operator "John Doe"
+```
 
-- **Documentation**: This README and inline code comments
-- **Testing**: Run `python test_system.py` for system validation
-- **Issues**: Review error logs and system health endpoints
+Dry-run simulation (for testing):
+```bash
+python tools/acquire_cli.py simulate --output C:\Evidence\sample --size 100 --operator "Test User"
+```
 
-## Changelog
+**Output Files:**
 
-### Version 1.0.0
-- Initial release with core forensic capabilities
-- Advanced file carving with 45+ file type support
-- Real-time processing with WebSocket updates
-- Comprehensive error handling and recovery
-- Web-based dashboard and case management
-- User authentication and session management
-- SQLite database integration
-- Multiprocessing support for background tasks
-- Extensive test suite and validation framework
+The acquisition process creates:
+- `image_YYYYMMDDTHHMMSS.dd` - The raw disk image
+- `image_YYYYMMDDTHHMMSS.dd.metadata.json` - Acquisition metadata with hashes, device info, and timestamps
+- Database record in `tools/new_database_mappings.db`
 
+**Safety Features:**
+- Requires explicit confirmation string before imaging
+- Administrator privilege checks
+- Read-only access to physical disks
+- On-the-fly hash computation for integrity verification
+- Comprehensive logging and metadata generation
+- Abort capability during acquisition
+
+<br>
+
+## Built With 🧱  &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+- [pytsk3](https://pypi.org/project/pytsk3/) - Python bindings for The Sleuth Kit
+- [libewf-python](https://github.com/libyal/libewf) - Library to access the Expert Witness Compression Format (EWF)
+- [PySide6](https://pypi.org/project/PySide6/) - Qt-based GUI framework
+- [Groq API](https://console.groq.com) - Cloud AI for forensic analysis (Llama 3.3 70B)
+- [Arsenal Image Mounter](https://arsenalrecon.com/products/image-mounter/) - For mounting forensic disk images (Windows)
+- [PyMuPDF](https://pymupdf.readthedocs.io/) - PDF rendering
+- [Pillow](https://pillow.readthedocs.io/) - Image processing with forensic-grade truncated image support
+
+
+## Work in Progress 🧑‍🔧  &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+- **Direct Video/Audio Playback**: Currently, the video and audio player saves files temporarily before playing them. The goal is to enable direct playback from disk image streams for faster performance.
+- **Integrated File Search and Viewer**: The file search results are not yet connected to the Viewer tabs (Hex, Text, Application, Metadata). Clicking a search result should navigate to and display that file.
+- **Color Issues in Dark Mode**: The software currently has some colour display issues on Linux and macOS systems when using dark mode. Certain UI elements may not be clearly visible or may appear incorrectly.
+
+## Testing & Feedback 🧪  &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+- **Tested Formats**: The tool has primarily been tested with `dd` and `E01` files. While these formats are well-supported, additional testing with other formats, such as `Ex01`, `Lx01`, `s01`, and others, is needed.
+- **Tested File Systems**: The tool has been tested on NTFS and FAT32 file systems. Testing on additional file systems like exFAT, HFS+, APFS, EXT4, and others is needed to ensure broader compatibility.
+- **Call for Samples**: If you have disk images in formats that are less tested (`Ex01`, `Lx01`, `s01`, etc.), your contributions would be greatly appreciated to help improve the tool's compatibility and robustness.
+- **Feedback Welcome**: Please report any issues or unexpected behaviour to help improve the tool. Contributions and testing feedback are encouraged and welcomed.
+
+## Contributing 🤝 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+
+I welcome contributions from the community to help improve **ForensAI**! If you're interested in contributing, here's how you can get involved:
+
+### How to Contribute
+
+1. **Report Issues**: If you find any bugs or have suggestions for improvements, please document them clearly with as much detail as possible to help address the issue effectively.
+2. **Submit Changes**: If you have a fix or feature you'd like to contribute, ensure your code adheres to the coding standards and includes tests where applicable.
+3. **Provide Testing Samples**: If you have disk images in formats that are less tested (`Ex01`, `Lx01`, `s01`, etc.), your contributions would be greatly appreciated to help improve the tool's compatibility and robustness.
+4. **Review and Feedback**: Review changes and provide feedback to help refine and enhance the tool.
+
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
