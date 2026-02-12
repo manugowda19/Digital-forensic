@@ -54,9 +54,10 @@
 ### Demo of Application Working Process 📸 ⬆️
 
 <video width="900" controls>
-  <source src="Screencasts/Screencast From 2026-02-11 15-34-41.webm" type="video/webm">
+  <source src="Screencasts/recording.mp4" type="video/webm">
   Your browser does not support the video tag.
 </video>
+
 
 ## Supported Image Formats 💾 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
 
