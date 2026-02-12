@@ -1,7 +1,7 @@
 # ForensAI - Advanced Digital Forensics Platform
 
-**Version:** 1.0.0  
-**Author:** Manu
+**Version:** 1.1.0  
+**Author:** Manu and Nawaf
 **License:** MIT  
 
 ## Overview
