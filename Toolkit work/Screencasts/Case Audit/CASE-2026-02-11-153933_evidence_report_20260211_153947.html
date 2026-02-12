@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic Evidence Report - CASE-2026-02-11-153933</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header .subtitle {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .section h3 {
+            color: #764ba2;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .hash {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+            word-break: break-all;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 2px;
+        }
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .badge-warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .badge-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .badge-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            line-height: 1.4;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Forensic Evidence Report</h1>
+        <p class="subtitle">Case ID: CASE-2026-02-11-153933</p>
+        <p class="subtitle">Generated: 2026-02-11 15:39:47 UTC</p>
+        <p class="subtitle">Operator: vboxuser @ Ubuntu</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Executive Summary</h2>
+        <p>This report documents the forensic analysis of digital evidence for case <strong>CASE-2026-02-11-153933</strong>.
+        The analysis was conducted on <strong>2026-02-11 15:39:47 UTC</strong> by <strong>vboxuser</strong>.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Files</div>
+                <div class="stat-value">151</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Notable Artifacts</div>
+                <div class="stat-value">151</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Size</div>
+                <div class="stat-value">10.88 GB</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Processing Steps</div>
+                <div class="stat-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Acquisition & Verification Summary</h2>
+
+        <h3>Master Evidence Image</h3>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>File Path</td>
+                <td><code>/home/vboxuser/Desktop/physical_drive1_20260210T171039.dd</code></td>
+            </tr>
+            <tr>
+                <td>File Size</td>
+                <td>3,816.00 MB (4,001,366,016 bytes)</td>
+            </tr>
+            <tr>
+                <td>MD5 Hash</td>
+                <td><span class="hash">2a54a1c13cd550e1d1f57a617cdac2a1</span></td>
+            </tr>
+            <tr>
+                <td>SHA256 Hash</td>
+                <td><span class="hash">9230b1beb5f21eed275cb6249a01606f30283b7f25a5e9ad1ede8ba214576f41</span></td>
+            </tr>
+            <tr>
+                <td>Master Verification Status</td>
+                <td><span class="badge badge-success">✓ Verified</span></td>
+            </tr>
+        </table>
+
+        <h3 style="margin-top: 25px;">Derived ISO Image</h3>
+        <div class="warning">
+            <strong>⚠️ No Derived ISO:</strong> No derived ISO image was provided for this analysis.
+            Only the master evidence image was processed.
+        </div>
+
+        <div class="info">
+            <strong>ℹ️ Forensic Note:</strong> All image hashes have been computed and verified.
+            The original evidence files have NOT been modified during this analysis.
+            Chain of custody has been maintained throughout the process.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Chain of Custody</h2>
+        <p>Complete chronological record of evidence handling from acquisition to analysis:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp (UTC)</th>
+                    <th>Action</th>
+                    <th>Actor</th>
+                    <th>Tools</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>2026-02-11T15:39:47</td>
+                    <td>Evidence image acquired: physical_drive1_20260210T171039.dd</td>
+                    <td>vboxuser</td>
+                    <td>ForensAI Acquisition Module</td>
+                    <td>Image file created at 2026-02-11 15:25:34 UTC</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-11T15:39:47</td>
+                    <td>Forensic analysis initiated</td>
+                    <td>vboxuser</td>
+                    <td>ForensAI vunknown</td>
+                    <td>Analysis started by vboxuser on Ubuntu</td>
+                </tr>
+
+                <tr>
+                    <td>2026-02-11T15:39:54</td>
+                    <td>Master image hash verification</td>
+                    <td>vboxuser</td>
+                    <td>Python hashlib (md5, sha256)</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>4. Tools & Versions</h2>
+        <p>Software tools used in this forensic analysis:</p>
+
+        <div class="warning" style="margin-bottom: 20px;">
+            <strong>⚠️ Missing Tools Detected (2 tool(s) not found)</strong>
+            <p>The following forensic tools were not found on this system. Some analysis features may be limited:</p>
+            <ul>
+
+                <li><strong>bulk_extractor</strong>: Install: <code>apt-get install bulk-extractor</code> (Linux) or download from digitalcorpora.org</li>
+
+                <li><strong>genisoimage</strong>: Install: <code>apt-get install genisoimage</code> (Linux) or <code>brew install cdrtools</code> (macOS)</li>
+
+            </ul>
+            <p style="margin-top: 10px;"><strong>💡 Note:</strong> Install missing tools to enable full forensic capabilities including ISO creation, advanced carving, and PDF report generation.</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Version</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>python</strong></td>
+                    <td><code>3.13.7</code></td>
+                    <td><span class="badge badge-success">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>platform</strong></td>
+                    <td><code>Linux-6.17.0-6-generic-aarch64-with-glibc2.42</code></td>
+                    <td><span class="badge badge-success">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>hostname</strong></td>
+                    <td><code>Ubuntu</code></td>
+                    <td><span class="badge badge-success">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>pytsk3</strong></td>
+                    <td><code>4.14.0</code></td>
+                    <td><span class="badge badge-success">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>bulk_extractor</strong></td>
+                    <td><code>not found</code></td>
+                    <td><span class="badge badge-danger">Not Found</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>dd</strong></td>
+                    <td><code>dd (uutils coreutils) 0.2.2</code></td>
+                    <td><span class="badge badge-success">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>genisoimage</strong></td>
+                    <td><code>not found</code></td>
+                    <td><span class="badge badge-danger">Not Found</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>5. Processing Steps</h2>
+        <p>Detailed record of processing steps performed:</p>
+
+        <h3>Step 1: Verify Master Image</h3>
+        <p><span class="badge badge-success">✓ Success</span></p>
+        <table>
+            <tr><td><strong>Command:</strong></td><td><code>hash verification: /home/vboxuser/Desktop/physical_drive1_20260210T171039.dd</code></td></tr>
+            <tr><td><strong>Start Time:</strong></td><td>2026-02-11T15:39:47</td></tr>
+            <tr><td><strong>End Time:</strong></td><td>2026-02-11T15:39:54</td></tr>
+        </table>
+
+        <p><strong>Output:</strong></p>
+        <pre>Hashes computed: {'md5': '2a54a1c13cd550e1d1f57a617cdac2a1', 'sha256': '9230b1beb5f21eed275cb6249a01606f30283b7f25a5e9ad1ede8ba214576f41'}</pre>
+    </div>
+
+    <div class="section">
+        <h2>6. Artifacts Summary</h2>
+
+        <!-- FIX #6: Download links for CSV and JSON -->
+        <div class="info" style="margin-bottom: 20px;">
+            <strong>📥 Download Full Artifact Data:</strong><br>
+            <a href="CASE-2026-02-11-153933_artifacts_20260211_153947.csv" download style="color: #667eea; font-weight: bold; text-decoration: none; margin-right: 20px;">
+                📊 Download CSV (Excel-compatible)
+            </a>
+            <a href="CASE-2026-02-11-153933_evidence_manifest_20260211_153947.json" download style="color: #667eea; font-weight: bold; text-decoration: none;">
+                📄 Download JSON Manifest
+            </a>
+            <p style="margin-top: 8px; font-size: 0.9em;">
+                The CSV file contains all 151 artifacts with complete metadata for analysis in spreadsheet tools.
+            </p>
+        </div>
+
+        <h3>File Type Distribution</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Count</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td>151</td>
+                    <td>100.0%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>7. Notable Findings</h2>
+        <p>Top priority artifacts identified during analysis (showing top 20):</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                    <th>Preview</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Origin</th>
+                    <th>Confidence</th>
+                    <th>Size</th>
+                    <th>Reasons</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>SanDiskSecureAccessV2_win.exe</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>7,236.0 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995811+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>بحث مادة التفسير.docx</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>20.8 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995825+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>{4944f5ac-fe92-4c3c-879b-cae84db01eec}.enc</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.0 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995834+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>System Volume Information/WPSettings.dat</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.0 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995839+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>System Volume Information/IndexerVolumeGuid</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995842+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>المستوى الاحداثي.gif</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>361.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995846+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>ReadyBoostPerfTest.tmp</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>8,192.0 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995850+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>يومية العمال 2.xlsx</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>12.7 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995853+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 7.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995856+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 8.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.3 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995859+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 9.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995862+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 10.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995864+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 11.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995867+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 12.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995870+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 13.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.2 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995872+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 14.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995875+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 15.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995877+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 16.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.0 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995879+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 17.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.3 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995882+00:00)</td>
+                </tr>
+
+                <tr>
+                    <td><span class="badge badge-warning">20</span></td>
+                    <td style="text-align: center;"><span style="font-size: 20px; color: #999;" title="Generic file">📁</span></td>
+                    <td><code>نص 18.txt</code></td>
+                    <td><span class="badge badge-info">unknown</span></td>
+                    <td><span class="badge badge-success">original</span></td>
+                    <td><span class="badge badge-success">high</span></td>
+                    <td>0.1 KB</td>
+                    <td style="font-size: 0.9em;">• Modified within last 24 hours (mtime: 2026-02-11T15:39:47.995884+00:00)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info">
+            <strong>💡 Tip:</strong> Click on artifact names (if available) to open the extracted file.
+            Review these high-priority findings first during your investigation.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Recommendations & Next Steps</h2>
+        <h3>Analyst Recommendations:</h3>
+        <ul>
+            <li><strong>Priority Review:</strong> Focus on the 151 notable artifacts identified in Section 7</li>
+            <li><strong>Executable Analysis:</strong> All executable files should be analyzed for malicious behavior</li>
+            <li><strong>Recent Activity:</strong> Review recently modified files (last 30 days) for investigation timeline</li>
+            <li><strong>Bulk Extractor Findings:</strong> Manually review bulk_extractor results for PII and sensitive data</li>
+            <li><strong>Hash Verification:</strong> Periodically re-verify master image hashes to ensure integrity</li>
+            <li><strong>Preservation:</strong> Store this report with the evidence package for chain of custody documentation</li>
+        </ul>
+
+        <h3>Suggested Search Queries:</h3>
+        <ul>
+            <li>Search for keywords: "password", "confidential", "secret", "credential"</li>
+            <li>Filter by file type: executable, document, archive</li>
+            <li>Timeline analysis: Files accessed/modified within suspect timeframe</li>
+            <li>Network artifacts: URLs, email addresses, IP addresses from bulk_extractor</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p><strong>ForensAI Forensic Evidence Report</strong></p>
+        <p>Generated on 2026-02-11 15:39:47 UTC by vboxuser</p>
+        <p>This report is for official use only and may contain sensitive information.</p>
+        <p style="margin-top: 15px; color: #999;">
+            Report ID: CASE-2026-02-11-153933_20260211_153947<br>
+            ForensAI Version: unknown<br>
+            Platform: Linux-6.17.0-6-generic-aarch64-with-glibc2.42
+        </p>
+    </div>
+</body>
+</html>
