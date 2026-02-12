@@ -5,38 +5,8 @@
 </p>
 
 <p align="center">
-  <img src="Icons/logo.ico" alt="ForensAI Logo" width="400"/>
+  <img src="Screencasts/logo.ico" alt="ForensAI Logo" width="400"/>
 </p>
-
-## Navigation 🧭
-
-- [Preview 👀](#preview-)
-- [Features 🌟](#features-)
-- [Screenshots 📸](#screenshots-)
-- [Supported Image Formats 💾](#supported-image-formats-)
-- [Tested File Systems 🗂️](#tested-file-systems-%EF%B8%8F)
-- [Cross-Platform Compatibility 🖥️💻](#cross-platform-compatibility-%EF%B8%8F)
-- [Getting Started 🚀](#getting-started-)
-  - [Prerequisites 🛠️](#prerequisites-)
-  - [Configuration ⚙️](#configuration-%EF%B8%8F)
-  - [Running the Tool ▶️](#running-the-tool-%EF%B8%8F)
-- [Built With 🧱](#built-with-)
-- [Work in Progress 🛠️](#work-in-progress-)
-- [Testing & Feedback 🧪](#testing--feedback-)
-- [Contributing 🤝](#contributing-)
-
-
-## Preview 👀 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
-
-<p>
-  <br/>
-  <img src="Icons/readme/Preview_Light.png" alt="ForensAI Preview Light" width="100%"/>
-  <br/>
-  <img src="Icons/readme/Preview_Dark.png" alt="ForensAI Preview Dark" width="100%"/>
-  <br/>
-</p>
-
-<br>
 
 ## Features 🌟 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
 
