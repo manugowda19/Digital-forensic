@@ -51,9 +51,12 @@
 
 <br>
 
-## Demo of Application Working process 📸 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
+### Demo of Application Working Process 📸 ⬆️
 
-<a href="Screencasts/Screencast From 2026-02-11 15-34-41.webm"><img src="href="Screencasts/Screencast From 2026-02-11 15-34-41.webm" alt="Demo screen recording" width="900"/>
+<video width="900" controls>
+  <source src="Screencasts/Screencast From 2026-02-11 15-34-41.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 ## Supported Image Formats 💾 &nbsp;&nbsp;&nbsp;&nbsp; [⬆️](#forensai)
 
