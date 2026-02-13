@@ -6,7 +6,7 @@ This repository documents the iterative development process of our Forensic Adva
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 - [Overview](#overview)
 - [Development Journey](#development-journey)
   - [Version 1: Web-Based Application](#version-1-web-based-application)
@@ -17,13 +17,13 @@ This repository documents the iterative development process of our Forensic Adva
 
 ---
 
-## 🔍 Overview
+##  Overview
 
 The Forensic Advanced Toolkit is an evolving platform for digital forensic analysis, designed to handle evidence processing, file extraction, and comprehensive forensic investigations. This repository showcases our development iterations as we refine the tool for real-world forensic applications.
 
 ---
 
-## 🚀 Development Journey
+##  Development Journey
 
 ### Version 1: Web-Based Application
 **Location:** `test--1/web-application-digital-forensic-v1`
@@ -31,13 +31,13 @@ The Forensic Advanced Toolkit is an evolving platform for digital forensic analy
 #### Description
 Our initial approach focused on building a web-based application for evidence analysis, providing accessible forensic tools through a browser interface.
 
-#### ✅ Achievements
+####  Achievements
 - Successfully analyzed smaller evidence files
 - Implemented user privilege management system
 - Established foundational forensic analysis workflows
 - Validated core concepts for evidence processing
 
-#### ❌ Limitations
+####  Limitations
 - **Not suitable for actual evidence analysis** - Web-based architecture introduced risks
 - **Packet loss concerns** - Network-dependent operations could compromise data integrity
 - **Limited processing power** - Browser constraints affected performance
@@ -54,14 +54,14 @@ This version helped us understand user privilege requirements and validated our 
 #### Description
 Our second iteration moved to a standalone executable format, providing direct system access and enhanced capabilities for forensic analysis.
 
-#### ✅ Achievements
+####  Achievements
 - **Direct system access** - Eliminated network-related vulnerabilities
 - **Enhanced file analysis** - More powerful processing capabilities
 - **Large evidence file support** - Capable of handling actual forensic evidence
 - **File extraction capabilities** - Added comprehensive data extraction tools
 - **Improved security** - Local processing ensures evidence integrity
 
-#### ❌ Limitations
+####  Limitations
 - **User experience** - Interface needed more intuitive design
 - **Manual operations** - Lacked automation for repetitive tasks
 - **Rough implementation** - Served as proof-of-concept for Version 3
@@ -72,7 +72,7 @@ This version proved the viability of a desktop application approach and identifi
 ---
 
 ### Version 3: Coming Soon
-**Status:** 🚧 In Development
+**Status:**  In Development
 
 #### Planned Improvements
 - Enhanced user interface with modern UX principles
@@ -85,7 +85,7 @@ Stay tuned for updates!
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 This is an ongoing development project. Feedback and contributions are welcome as we continue to refine and enhance the toolkit.
 
@@ -97,16 +97,14 @@ This is an ongoing development project. Feedback and contributions are welcome a
 
 ---
 
-## 📞 Contact
+##  Contact
 
 **Project Contributors:**
 - [MANU GOWDA](https://github.com/manugowda19)
-- [Nawaf](https://github.com/NawafAlk)
+- [NAWAF](https://github.com/NawafAlk)
   
 ---
 
 **Note:** This toolkit is under active development. Features and functionality are subject to change as we continue our iterative development process.
-
----
-
-**Note:** This toolkit is under active development. Features and functionality are subject to change as we continue our iterative development process.
+We will behappy to hear from the devlopers and also the people who feel there should be a change in the system what is present today 
+TODAYS CHANGES --> TOMORROWS FUTURE
